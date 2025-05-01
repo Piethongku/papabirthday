@@ -1,0 +1,77 @@
+body{
+    background-color: #e9ff25;                 /* reset any default body margins */   
+}
+
+.Heading{
+    font-family:"Noto Sans Thai", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+font-size: 5em;
+display: flex;
+justify-content: center; 
+padding-top: 3em;
+
+
+}
+
+
+
+.button{
+    display: flex;
+    justify-content: center; 
+}
+
+.button-33 {
+  width: 500px;
+  height: 100px;
+  font-size: 2em;
+  background-color: #2cb9ff;
+  border-radius: 100px;
+  box-shadow:  #3e6f80 0 -25px 18px -14px inset;
+  color: rgb(246, 244, 244);
+  cursor: grab;
+  display: inline-block;
+  font-family:"Noto Sans Thai", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: #3A352F 0 -25px 18px -14px inset,#3A352F 0 1px 2px,#3A352F 0 2px 4px,#3A352F 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+
+
+@media screen 
+  and (min-width: 340px) 
+  and (min-height: 600px) 
+  and (-webkit-device-pixel-ratio: 2) {
+
+    .Heading{
+        font-size: 2.5em;
+        padding-top: 5em;
+    }
+
+
+    .button-33 {
+        width: 300px;
+        height: 80px;
+        font-size: 1.5em;
+    }
+    
+}

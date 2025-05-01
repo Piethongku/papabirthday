@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PAPA BIRTHDAY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.js"></script>
+
+</head>
+
+
+
+<body>
+    <div class="Heading">
+        วันนี้คือวันอะไรนะ..
+    </div>
+
+
+<div class="button">
+    <button class="button-33" role="button">คลิ้กตรงนี้!</button>
+</div>
+
+    <script>
+     const audio = new Audio("assets/papabday.mp3");
+  const button = document.querySelector('.button-33');
+
+  button.addEventListener('click', () => {
+    // 1) Play audio
+    audio.currentTime = 0;
+    audio.play();
+
+    // 2) Fire repeated, large, slow‐falling confetti
+    const duration   = 5000;             // run for 5 seconds
+    const interval   = 500;              // new burst every 0.5s
+    const endTime    = Date.now() + duration;
+
+    (function fire() {
+      if (Date.now() > endTime) return;
+      // center origin on the button
+      const rect = button.getBoundingClientRect();
+      const origin = {
+        x: (rect.left + rect.right) / 2 / window.innerWidth,
+        y: (rect.top + rect.bottom) / 2 / window.innerHeight
+      };
+
+      confetti({
+        particleCount: 100,
+        spread:       60,
+        scalar:       1.5,    // 1.5× size
+        gravity:      0.2,    // slower fall
+        ticks:        200,    // longer lifetime
+        origin
+      });
+
+      setTimeout(fire, interval);
+    })();
+  });
+    </script>
+
+
+
+
+</body>
+
